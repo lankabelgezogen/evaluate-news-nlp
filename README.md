@@ -7,6 +7,7 @@ Webpack, Sass, Express
 Remember that once you clone, you will still need to install everything:
 
 `cd` into your new folder and run:
+
     npm install
 
 ## Setting up the API
