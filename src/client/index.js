@@ -30,10 +30,14 @@ function updateUI(data = {}) {
 
 async function handleSubmit(e) {
     e.preventDefault();
-    let formText = document.getElementById('name').value;
-    await getAPIKey();
-    const apiData = await makeAPICall(apiKey, formText);
-    updateUI(apiData);
+    let formText = document.getElementById('name').value.trim();
+    if(!formText) {
+        alert('ENTER VALID TEXT!')
+    } else {
+        await getAPIKey();
+        const apiData = await makeAPICall(apiKey, formText);
+        updateUI(apiData);
+    }
 }
 
 document.getElementById('submit').addEventListener('click', handleSubmit);
