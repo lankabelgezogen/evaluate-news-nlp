@@ -35,7 +35,7 @@ async function handleSubmit(e) {
         alert('ENTER VALID TEXT!')
     } else {
         await getAPIKey();
-        const url = `https://api.meaningcloud.com/sentiment-2.1?key=${key}&lang=en&txt=${formText}`;
+        const url = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&lang=en&txt=${formText}`;
         const apiData = await makeAPICall(url);
         updateUI(apiData);
     }
