@@ -1,6 +1,8 @@
-async function makeAPICall(key = '', formText = ''){
+import fetch from 'node-fetch'
+
+async function makeAPICall(url = ''){
     let apiData = {};
-    await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${key}&lang=en&txt=${formText}`)
+    await fetch(url)
         .then(res => res.json())
         .then(data => {
             apiData = data;
